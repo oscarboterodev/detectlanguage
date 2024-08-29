@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes.js'; 
 import languageRoutes from './routes/languageRoutes.js';
+import statsRoutes from './routes/statsRoutes.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,6 +25,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/language', languageRoutes);
+app.use('/api/stats', statsRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
